@@ -13,20 +13,17 @@ public class CircleApp {
 		
 		System.out.println("Welcome to the Circle Tester");
 		do {
-		System.out.print("Enter radius:");
-		x = scan.nextDouble();
-		scan.nextLine();
-		if(x<0) {
-			System.out.println("error: enter a number above zero");
-			cont ="y";
-		}else {
+	
+		x =Validator.getDouble(scan, "Enter radius:");
+		
+		
 		c.setRadius(x);
 		
 		System.out.println(c.getRadius());
 		System.out.println(c.getFormattedCircumference());
 		System.out.println(c.getFormattedArea());
-		System.out.println("Continue? (y/n):");
-		cont = scan.next();}
+		
+		cont = Validator.getString(scan, "Continue? (y/n):");
 		}while(cont.equalsIgnoreCase("y"));
 
 		System.out.println("GoodBye!");
